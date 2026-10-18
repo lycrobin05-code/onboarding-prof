@@ -218,6 +218,7 @@
   <div class="wrap">À la lumière du Coran · Espace professeurs</div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script>
   const KEY = 'onboarding-prof-steps';
   const TOTAL = 3;
@@ -244,11 +245,30 @@
   document.querySelectorAll('button.check').forEach(b => {
     b.addEventListener('click', () => {
       const s = b.dataset.step;
-      done = done.includes(s) ? done.filter(x => x !== s) : [...done, s];
+      const checking = !done.includes(s);
+      done = checking ? [...done, s] : done.filter(x => x !== s);
       try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {}
       render();
+      if (checking) celebrate(b, done.length === TOTAL);
     });
   });
+
+  function celebrate(btn, all) {
+    if (typeof confetti !== 'function') return;
+    const r = btn.getBoundingClientRect();
+    const origin = { x: (r.left + r.width / 2) / innerWidth, y: (r.top + r.height / 2) / innerHeight };
+    const colors = ['#C9A97E', '#E4CFA8', '#FAF6EE', '#1B4A47'];
+    confetti({ particleCount: 120, spread: 80, startVelocity: 42, origin, colors });
+    if (all) {
+      // Toutes les étapes terminées : grande pluie depuis les deux côtés
+      const end = Date.now() + 1500;
+      (function frame() {
+        confetti({ particleCount: 6, angle: 60, spread: 60, origin: { x: 0, y: .7 }, colors });
+        confetti({ particleCount: 6, angle: 120, spread: 60, origin: { x: 1, y: .7 }, colors });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
+    }
+  }
 
   render();
 </script>
