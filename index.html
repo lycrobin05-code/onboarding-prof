@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Préparation professeur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #0B1A18;
+    --surface: #0F2320;
+    --primary: #1B4A47;
+    --accent: #C9A97E;
+    --accent-200: #E4CFA8;
+    --cream: #FAF6EE;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    background: var(--night);
+    color: rgba(250, 246, 238, .85);
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(201, 169, 126, .05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201, 169, 126, .05) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+  header { border-bottom: 1px solid rgba(201, 169, 126, .1); padding: 16px 0; }
+  header img { height: 44px; width: auto; display: block; margin: 0 auto; }
+
+  .hero { padding: 56px 0 48px; text-align: center; }
+  .kicker { color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  h1 { color: var(--cream); font-size: 1.4rem; font-weight: 700; text-transform: uppercase; line-height: 1.25; margin: 12px 0 16px; }
+  .hero p { max-width: 560px; margin: 0 auto; }
+
+  .progress { max-width: 420px; margin: 32px auto 0; }
+  .progress-bar { height: 6px; background: rgba(201, 169, 126, .15); border-radius: 999px; overflow: hidden; }
+  .progress-fill { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+  .progress-label { font-size: 13px; color: rgba(250, 246, 238, .7); margin-top: 8px; }
+
+  .plan { background: var(--surface); padding: 56px 0; }
+  h2 { color: var(--accent-200); font-size: 1.35rem; font-weight: 700; text-align: center; margin-bottom: 24px; }
+  .plan ol { list-style: none; display: grid; gap: 12px; }
+  .plan a {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 20px; border: 1px solid rgba(201, 169, 126, .2); border-radius: var(--radius);
+    color: var(--cream); text-decoration: none; transition: border-color .15s, background .15s;
+  }
+  .plan a:hover { border-color: rgba(201, 169, 126, .5); background: rgba(201, 169, 126, .04); }
+  .num {
+    flex: none; width: 36px; height: 36px; border-radius: 999px;
+    display: grid; place-items: center;
+    border: 1px solid var(--accent); color: var(--accent); font-weight: 700; font-size: 14px;
+  }
+  .plan .done .num { background: var(--accent); color: var(--night); }
+  .plan .label { font-weight: 600; }
+  .plan .sub { display: block; font-size: 13px; color: rgba(250, 246, 238, .6); font-weight: 400; }
+
+  .step { padding: 64px 0; }
+  .step:nth-of-type(even) { background: var(--surface); }
+  .step-head { text-align: center; margin-bottom: 28px; }
+  .step-tag {
+    display: inline-block; color: var(--night); background: var(--accent);
+    font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: var(--radius);
+  }
+  h3 { color: var(--cream); font-size: 1.1rem; font-weight: 600; margin-top: 14px; }
+  .step-intro { text-align: center; max-width: 560px; margin: 0 auto 28px; }
+
+  .video {
+    position: relative; width: 100%; aspect-ratio: 1920 / 1246;
+    border-radius: var(--radius); overflow: hidden;
+    border: 1px solid rgba(201, 169, 126, .2); background: #000;
+  }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video-note { font-size: 13px; color: rgba(250, 246, 238, .5); text-align: center; margin-top: 10px; }
+
+  .substep {
+    margin-top: 32px; padding: 28px 20px; text-align: center;
+    border: 1px solid rgba(201, 169, 126, .2); border-radius: var(--radius);
+  }
+  .substep-title { color: var(--cream); font-weight: 600; font-size: 1.05rem; margin-bottom: 20px; }
+  .btn-wa {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 14px 24px; border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--accent-200), var(--accent)); color: var(--night);
+    font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .03em; text-decoration: none;
+    transition: filter .15s;
+  }
+  .btn-wa:hover { filter: brightness(1.06); }
+  .btn-wa svg { width: 22px; height: 22px; fill: currentColor; flex: none; }
+  .substep-note { font-size: 13px; color: rgba(250, 246, 238, .6); margin-top: 14px; }
+
+  .todo {
+    border: 1px dashed rgba(201, 169, 126, .35); border-radius: var(--radius);
+    padding: 40px 20px; text-align: center; color: rgba(250, 246, 238, .5); font-size: 14px;
+  }
+
+  .check {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    margin: 28px auto 0; padding: 14px 22px; max-width: 360px;
+    border: 1px solid var(--accent); border-radius: var(--radius);
+    background: transparent; color: var(--cream);
+    font: 800 15px 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: .03em;
+    cursor: pointer; transition: background .15s, color .15s;
+  }
+  .check svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .check .tick { opacity: 0; }
+  .check[aria-pressed="true"] { background: linear-gradient(180deg, var(--accent-200), var(--accent)); color: var(--night); border-color: var(--accent); }
+  .check[aria-pressed="true"] .tick { opacity: 1; }
+
+  footer { padding: 40px 0; text-align: center; font-size: 13px; color: rgba(250, 246, 238, .5); border-top: 1px solid rgba(201, 169, 126, .1); }
+
+  @media (min-width: 768px) {
+    body { font-size: 16px; }
+    h1 { font-size: 2.3rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.25rem; }
+    .hero { padding: 96px 0 72px; }
+    .step, .plan { padding: 96px 0; }
+    header img { height: 52px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bg-grid">
+  <div class="wrap"><img src="logo.png" alt="À la lumière du Coran"></div>
+</header>
+
+<section class="hero bg-grid">
+  <div class="wrap">
+    <p class="kicker">Préparation professeur</p>
+    <h1>Bienvenue dans l'équipe</h1>
+    <p>Cette page te prépare à donner tes premiers cours. Suis les étapes dans l'ordre et coche chacune quand elle est terminée.</p>
+    <div class="progress">
+      <div class="progress-bar"><div class="progress-fill" id="fill"></div></div>
+      <p class="progress-label" id="progress-label">0 étape terminée sur 3</p>
+    </div>
+  </div>
+</section>
+
+<section class="plan">
+  <div class="wrap">
+    <h2>Comment ça se déroule</h2>
+    <ol>
+      <li data-step="1"><a href="#etape-1"><span class="num">1</span><span class="label">Étape 1<span class="sub">Contenu à ajouter</span></span></a></li>
+      <li data-step="2"><a href="#etape-2"><span class="num">2</span><span class="label">Étape 2<span class="sub">Crée ton calendrier de réservation de cours</span></span></a></li>
+      <li data-step="3"><a href="#etape-3"><span class="num">3</span><span class="label">Étape 3<span class="sub">Contenu à ajouter</span></span></a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="step bg-grid" id="etape-1">
+  <div class="wrap">
+    <div class="step-head">
+      <span class="step-tag">Étape 1</span>
+      <h3>Contenu à ajouter</h3>
+    </div>
+    <div class="todo">Vidéo et consignes de l'étape 1 à ajouter.</div>
+    <button class="check" type="button" data-step="1" aria-pressed="false">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path class="tick" d="m8 12 3 3 5-6"/></svg>
+      Étape 1 terminée
+    </button>
+  </div>
+</section>
+
+<section class="step" id="etape-2">
+  <div class="wrap">
+    <div class="step-head">
+      <span class="step-tag">Étape 2</span>
+      <h3>Crée ton calendrier de réservation de cours :</h3>
+    </div>
+    <div class="video">
+      <iframe src="https://www.tella.tv/video/vid_cmvdwyygw006902l80ldm6g60/embed" title="Créer et configurer son compte Calendly" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="substep">
+      <p class="substep-title">Étape 2.1. Copie le lien de ton événement et envoie-le à Robin sur WhatsApp.</p>
+      <a class="btn-wa" href="https://wa.me/33780505214?text=Voici%20le%20lien%20de%20mon%20calendrier%20Calendly%20%3A%20COLLER%20LE%20LIEN" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.35-.41.47-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.32Z"/></svg>
+        Envoyer mon lien sur WhatsApp
+      </a>
+      <p class="substep-note">Le message s'écrit tout seul. Remplace « COLLER LE LIEN » par le lien de ton événement Calendly, puis envoie.</p>
+    </div>
+    <button class="check" type="button" data-step="2" aria-pressed="false">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path class="tick" d="m8 12 3 3 5-6"/></svg>
+      Étape 2 terminée
+    </button>
+  </div>
+</section>
+
+<section class="step bg-grid" id="etape-3">
+  <div class="wrap">
+    <div class="step-head">
+      <span class="step-tag">Étape 3</span>
+      <h3>Contenu à ajouter</h3>
+    </div>
+    <div class="todo">Vidéo et consignes de l'étape 3 à ajouter.</div>
+    <button class="check" type="button" data-step="3" aria-pressed="false">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path class="tick" d="m8 12 3 3 5-6"/></svg>
+      Étape 3 terminée
+    </button>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">À la lumière du Coran · Espace professeurs</div>
+</footer>
+
+<script>
+  const KEY = 'onboarding-prof-steps';
+  const TOTAL = 3;
+  let done = [];
+  try { done = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) {}
+
+  function render() {
+    document.querySelectorAll('.check').forEach(b => {
+      b.setAttribute('aria-pressed', done.includes(b.dataset.step) ? 'true' : 'false');
+    });
+    document.querySelectorAll('.plan li').forEach(li => {
+      li.classList.toggle('done', done.includes(li.dataset.step));
+    });
+    const n = done.length;
+    document.getElementById('fill').style.width = (n / TOTAL * 100) + '%';
+    document.getElementById('progress-label').textContent =
+      n === TOTAL ? 'Tout est prêt. Les 3 étapes sont terminées.'
+                  : n + (n > 1 ? ' étapes terminées' : ' étape terminée') + ' sur ' + TOTAL;
+  }
+
+  document.querySelectorAll('.check').forEach(b => {
+    b.addEventListener('click', () => {
+      const s = b.dataset.step;
+      done = done.includes(s) ? done.filter(x => x !== s) : [...done, s];
+      try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {}
+      render();
+    });
+  });
+
+  render();
+</script>
+</body>
+</html>
