@@ -123,6 +123,7 @@
     color: var(--cream); font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .03em;
     text-decoration: none; transition: background .15s;
   }
+  .btn-outline.is-soon { opacity: .55; cursor: default; }
   .btn-outline:hover { background: rgba(201, 169, 126, .08); }
 
   .todo {
@@ -170,7 +171,7 @@
     <p>Cette page te prépare à donner tes premiers cours. Suis les étapes dans l'ordre et coche chacune quand elle est terminée.</p>
     <div class="progress">
       <div class="progress-bar"><div class="progress-fill" id="fill"></div></div>
-      <p class="progress-label" id="progress-label">Étape 1 terminée. Tu es à l'étape 2 sur 3.</p>
+      <p class="progress-label" id="progress-label">Étape 1 terminée. Tu es à l'étape 2 sur 5.</p>
     </div>
   </div>
 </section>
@@ -182,6 +183,8 @@
       <li data-step="1"><a href="#etape-1"><span class="num">1</span><span class="label">Étape 1 · Terminée<span class="sub">Ton recrutement est validé</span></span></a></li>
       <li data-step="2"><a href="#etape-2"><span class="num">2</span><span class="label">Étape 2<span class="sub">Crée ton calendrier de réservation de cours</span></span></a></li>
       <li data-step="3"><a href="#etape-3"><span class="num">3</span><span class="label">Étape 3<span class="sub">Crée ton compte Fathom (enregistrement des cours)</span></span></a></li>
+      <li data-step="4"><a href="#etape-4"><span class="num">4</span><span class="label">Étape 4<span class="sub">Bloque tes heures de prière dans ton agenda</span></span></a></li>
+      <li data-step="5"><a href="#etape-5"><span class="num">5</span><span class="label">Étape 5<span class="sub">Envoie ta facture chaque fin de mois</span></span></a></li>
     </ol>
   </div>
 </section>
@@ -192,7 +195,7 @@
       <span class="step-tag">Étape 1</span>
       <h3>Ton recrutement est validé</h3>
     </div>
-    <p class="step-intro">C'est fait. Tu fais maintenant partie de l'équipe de professeurs. Il te reste 2 étapes avant ton premier cours.</p>
+    <p class="step-intro">C'est fait. Tu fais maintenant partie de l'équipe de professeurs. Il te reste 4 étapes avant ton premier cours.</p>
     <div class="check is-done" aria-hidden="true">
       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path class="tick" d="m8 12 3 3 5-6"/></svg>
       Étape 1 terminée
@@ -288,6 +291,59 @@
   </div>
 </section>
 
+<section class="step" id="etape-4">
+  <div class="wrap">
+    <div class="step-head">
+      <span class="step-tag">Étape 4</span>
+      <h3>Bloque tes heures de prière dans ton agenda :</h3>
+    </div>
+    <p class="step-intro">Calendly ne propose jamais un créneau déjà occupé dans ton Google Agenda. En y mettant tes 5 prières, aucun élève ne peut réserver un cours pendant la prière.</p>
+    <ol class="howto">
+      <li><span class="num">1</span><div>
+        <p class="howto-title">Vérifie que Calendly lit ton Google Agenda</p>
+        <p>Dans Calendly, va dans <strong>Intégrations › Calendriers</strong> : ton compte Google doit être connecté, et ton agenda principal coché dans « Vérifier les conflits ».</p>
+      </div></li>
+      <li><span class="num">2</span><div>
+        <p class="howto-title">Ajoute tes horaires de prière</p>
+        <p>Un outil de l'institut crée automatiquement les créneaux de prière dans ton agenda selon ta ville, chaque jour. Le bouton sera actif dès qu'il est en ligne. En attendant, bloque tes prières à la main dans Google Agenda.</p>
+      </div></li>
+    </ol>
+    <div class="center"><span class="btn-outline is-soon">Outil horaires de prière : bientôt disponible</span></div>
+    <button class="check" type="button" data-step="4" aria-pressed="false">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path class="tick" d="m8 12 3 3 5-6"/></svg>
+      Étape 4 terminée
+    </button>
+  </div>
+</section>
+
+<section class="step bg-grid" id="etape-5">
+  <div class="wrap">
+    <div class="step-head">
+      <span class="step-tag">Étape 5</span>
+      <h3>Envoie ta facture chaque fin de mois :</h3>
+    </div>
+    <p class="step-intro">Tu es payé à l'heure de cours. Chaque fin de mois, tu envoies une facture qui récapitule tes heures du mois. Elle est réglée sous 15 jours.</p>
+    <ol class="howto">
+      <li><span class="num">1</span><div>
+        <p class="howto-title">Ce que la facture contient</p>
+        <p>Tes coordonnées et ton SIRET, le mois concerné, le nombre d'heures de cours, le tarif horaire prévu dans ton contrat et le total.</p>
+      </div></li>
+      <li><span class="num">2</span><div>
+        <p class="howto-title">À qui l'adresser</p>
+        <p>Thomas Saint-Louis, À la lumière du Coran<br>246 avenue de Fronton, 31200 Toulouse<br>SIRET 847 639 077 00035</p>
+      </div></li>
+      <li><span class="num">3</span><div>
+        <p class="howto-title">Où l'envoyer</p>
+        <p>À préciser : le canal d'envoi te sera indiqué ici.</p>
+      </div></li>
+    </ol>
+    <button class="check" type="button" data-step="5" aria-pressed="false">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path class="tick" d="m8 12 3 3 5-6"/></svg>
+      Étape 5 terminée
+    </button>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">À la lumière du Coran · Espace professeurs</div>
 </footer>
@@ -295,7 +351,7 @@
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script>
   const KEY = 'onboarding-prof-steps';
-  const TOTAL = 3;
+  const TOTAL = 5;
   let done = [];
   try { done = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) {}
   // Étape 1 (recrutement validé) est toujours acquise : on ne démarre jamais à zéro
@@ -310,9 +366,9 @@
     });
     const n = done.length;
     document.getElementById('fill').style.width = (n / TOTAL * 100) + '%';
-    const next = ['1', '2', '3'].find(s => !done.includes(s));
+    const next = ['1', '2', '3', '4', '5'].find(s => !done.includes(s));
     document.getElementById('progress-label').textContent =
-      n === TOTAL ? 'Tout est prêt. Les 3 étapes sont terminées.'
+      n === TOTAL ? 'Tout est prêt. Les 5 étapes sont terminées.'
                   : n + (n > 1 ? ' étapes terminées' : ' étape terminée') + '. Tu es à l\'étape ' + next + ' sur ' + TOTAL + '.';
   }
 
