@@ -101,6 +101,21 @@
   .btn-wa svg { width: 22px; height: 22px; fill: currentColor; flex: none; }
   .substep-note { font-size: 13px; color: rgba(250, 246, 238, .6); margin-top: 14px; }
 
+  .howto { list-style: none; display: grid; gap: 12px; max-width: 600px; margin: 0 auto 28px; }
+  .howto li {
+    display: flex; align-items: flex-start; gap: 16px; padding: 16px 20px;
+    border: 1px solid rgba(201, 169, 126, .2); border-radius: var(--radius);
+  }
+  .howto p { padding-top: 6px; }
+  .howto strong { color: var(--cream); font-weight: 600; }
+  .center { text-align: center; }
+  .btn-outline {
+    display: inline-block; padding: 14px 24px; border: 1px solid var(--accent); border-radius: var(--radius);
+    color: var(--cream); font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .03em;
+    text-decoration: none; transition: background .15s;
+  }
+  .btn-outline:hover { background: rgba(201, 169, 126, .08); }
+
   .todo {
     border: 1px dashed rgba(201, 169, 126, .35); border-radius: var(--radius);
     padding: 40px 20px; text-align: center; color: rgba(250, 246, 238, .5); font-size: 14px;
@@ -157,7 +172,7 @@
     <ol>
       <li data-step="1"><a href="#etape-1"><span class="num">1</span><span class="label">Étape 1 · Terminée<span class="sub">Ton recrutement est validé</span></span></a></li>
       <li data-step="2"><a href="#etape-2"><span class="num">2</span><span class="label">Étape 2<span class="sub">Crée ton calendrier de réservation de cours</span></span></a></li>
-      <li data-step="3"><a href="#etape-3"><span class="num">3</span><span class="label">Étape 3<span class="sub">Contenu à ajouter</span></span></a></li>
+      <li data-step="3"><a href="#etape-3"><span class="num">3</span><span class="label">Étape 3<span class="sub">Crée ton compte Fathom (enregistrement des cours)</span></span></a></li>
     </ol>
   </div>
 </section>
@@ -204,9 +219,24 @@
   <div class="wrap">
     <div class="step-head">
       <span class="step-tag">Étape 3</span>
-      <h3>Contenu à ajouter</h3>
+      <h3>Crée ton compte Fathom (enregistrement des cours) :</h3>
     </div>
-    <div class="todo">Vidéo et consignes de l'étape 3 à ajouter.</div>
+    <p class="step-intro">Fathom enregistre tes cours sur Google Meet. Ton élève récupère la rediffusion de son cours, et nous recevons le suivi de tes cours. C'est gratuit.</p>
+    <ol class="howto">
+      <li><span class="num">1</span><p>Inscris-toi sur Fathom avec <strong>le même compte Google que ton Calendly</strong>.</p></li>
+      <li><span class="num">2</span><p>Autorise l'accès à ton agenda Google. Fathom rejoint ainsi tes cours tout seul.</p></li>
+      <li><span class="num">3</span><p>Dans les paramètres de Fathom, active <strong>l'enregistrement automatique de tous tes appels</strong>.</p></li>
+      <li><span class="num">4</span><p>Après chaque cours, envoie le lien de la rediffusion <strong>à ton élève et à Robin</strong>.</p></li>
+    </ol>
+    <div class="center"><a class="btn-outline" href="https://www.fathom.ai/" target="_blank" rel="noopener">Créer mon compte Fathom</a></div>
+    <div class="substep">
+      <p class="substep-title">Étape 3.1. Préviens Robin sur WhatsApp que ton Fathom est prêt.</p>
+      <a class="btn-wa" href="https://wa.me/33780505214?text=Mon%20compte%20Fathom%20est%20pr%C3%AAt%2C%20l%27enregistrement%20automatique%20est%20activ%C3%A9." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.77-1.09-4.52-3.92-4.66-4.1-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.35-.41.47-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.32Z"/></svg>
+        Prévenir Robin sur WhatsApp
+      </a>
+      <p class="substep-note">Le message s'écrit tout seul. Tu n'as plus qu'à l'envoyer.</p>
+    </div>
     <button class="check" type="button" data-step="3" aria-pressed="false">
       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path class="tick" d="m8 12 3 3 5-6"/></svg>
       Étape 3 terminée
