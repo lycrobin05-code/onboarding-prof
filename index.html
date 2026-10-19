@@ -149,6 +149,18 @@
   .check[aria-pressed="true"], .check.is-done { background: linear-gradient(180deg, var(--accent-200), var(--accent)); color: var(--night); border-color: var(--accent); }
   .check[aria-pressed="true"] .tick, .check.is-done .tick { opacity: 1; }
 
+  .prompt-box { margin-top: 12px; }
+  .prompt-box pre {
+    max-height: 280px; overflow: auto; padding: 14px 16px; white-space: pre-wrap; word-break: break-word;
+    background: rgba(0, 0, 0, .25); border: 1px solid rgba(201, 169, 126, .2); border-radius: 12px;
+    font: 12.5px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; color: rgba(250, 246, 238, .85);
+  }
+  .btn-copy {
+    display: block; width: 100%; margin-top: 10px; padding: 14px 20px; border: 0; border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--accent-200), var(--accent)); color: var(--night);
+    font: 800 15px 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: .03em; cursor: pointer;
+  }
+
   footer { padding: 40px 0; text-align: center; font-size: 13px; color: rgba(250, 246, 238, .5); border-top: 1px solid rgba(201, 169, 126, .1); }
 
   @media (min-width: 768px) {
@@ -362,17 +374,74 @@
       <span class="step-tag">Étape 6</span>
       <h3>Envoie ta facture chaque fin de mois :</h3>
     </div>
-    <p class="step-intro">Tu es payé à l'heure de cours. Chaque fin de mois, tu envoies une facture qui récapitule tes heures du mois. Elle est réglée sous 15 jours.</p>
+    <p class="step-intro">Chaque fin de mois, tu envoies une facture pour le mois écoulé. Tu n'as pas besoin de SIRET ni de logiciel : tu la fais en 2 minutes avec ChatGPT (ou Claude), grâce au texte ci-dessous.</p>
     <ol class="howto">
       <li><span class="num">1</span><div>
-        <p class="howto-title">Ce que la facture contient</p>
-        <p>Tes coordonnées et ton SIRET, le mois concerné, le nombre d'heures de cours, le tarif horaire prévu dans ton contrat et le total.</p>
+        <p class="howto-title">Copie le texte de la facture</p>
+        <p>Clique sur le bouton <strong>Copier le texte</strong>. Les coordonnées de Thomas sont déjà dedans.</p>
+        <div class="prompt-box">
+          <pre id="prompt-facture">Tu es mon assistant de facturation. Crée-moi une facture professionnelle au format PDF, prête à télécharger, en français, mise en page sobre (une seule page A4).
+
+Remplis la facture UNIQUEMENT avec les informations ci-dessous. N'invente rien. S'il manque une information, pose-moi la question avant de générer le PDF.
+
+=== MES INFORMATIONS (le prestataire) — À REMPLIR ===
+Nom et prénom : [TON NOM COMPLET]
+Adresse complète : [TON ADRESSE, VILLE, CODE POSTAL]
+Pays : [TON PAYS]
+Numéro d'entreprise (ICE au Maroc, NIF en Algérie, matricule fiscal en Tunisie) : [TON NUMÉRO — si tu n'en as pas, écris "aucun"]
+
+=== LE CLIENT (ne pas modifier) ===
+Thomas Saint-Louis — À la lumière du Coran
+246 avenue de Fronton
+31200 Toulouse, France
+SIRET : 847 639 077 00035
+
+=== LA FACTURE — À REMPLIR ===
+Numéro de facture : [ex : 2026-10-01 → année-mois-numéro]
+Date de la facture : [JJ/MM/AAAA]
+Mois facturé : [ex : octobre 2026]
+
+=== MA RÉMUNÉRATION — À REMPLIR (garde UNE seule option, supprime l'autre) ===
+Option A — Payé à l'heure :
+  Nombre d'heures de cours réalisées : [NOMBRE]
+  Tarif horaire : [MONTANT] €
+  Détail des cours (facultatif) : [ex : 12/10 – Karim – 1 h ; 14/10 – Sarah – 1 h ... ou laisse vide]
+Option B — Payé au forfait mensuel :
+  Montant du forfait : [MONTANT] €
+
+=== COMMENT JE VEUX ÊTRE PAYÉ — À REMPLIR (garde UNE seule option, supprime les autres) ===
+Virement bancaire → Titulaire : [NOM] / Banque : [BANQUE] / IBAN ou RIB : [NUMÉRO] / BIC-SWIFT : [CODE]
+PayPal → Email PayPal : [EMAIL]
+Wise → Email ou identifiant Wise : [EMAIL OU @IDENTIFIANT]
+Autre → [NOM DU SERVICE + identifiant]
+
+=== RÈGLES DE LA FACTURE ===
+- Titre : "FACTURE" + le numéro de facture.
+- En haut à gauche : mes informations. En haut à droite : le client.
+- Si j'ai écrit "aucun" pour le numéro d'entreprise, n'affiche pas cette ligne sur la facture.
+- Intitulé de la ligne : "Cours d'arabe coranique en ligne — [mois facturé]".
+- Si option A : tableau Désignation | Quantité (heures) | Prix unitaire | Total. Total = heures × tarif horaire. Si j'ai donné le détail des cours, ajoute un second tableau dessous (Date | Élève | Durée).
+- Si option B : tableau Désignation | Forfait mensuel | Total.
+- Vérifie le calcul deux fois.
+- Montants en euros, avec 2 décimales (ex : 156,00 €).
+- Ajoute la mention : "TVA non applicable — prestataire établi hors de France."
+- Ajoute un encadré "Moyen de paiement" avec uniquement le moyen que j'ai choisi et ses informations.
+- Ajoute : "Paiement à réception de la facture, selon les conditions prévues au contrat."
+- Pas de logo, pas de couleurs vives, pas d'emoji.
+
+Une fois le PDF généré, donne-moi le lien de téléchargement. Nomme le fichier : Facture_[mon nom]_[mois facturé].pdf</pre>
+          <button class="btn-copy" type="button" data-copy="prompt-facture">Copier le texte</button>
+        </div>
       </div></li>
       <li><span class="num">2</span><div>
-        <p class="howto-title">À qui l'adresser</p>
-        <p>Thomas Saint-Louis, À la lumière du Coran<br>246 avenue de Fronton, 31200 Toulouse<br>SIRET 847 639 077 00035</p>
+        <p class="howto-title">Colle-le dans ChatGPT et remplis les crochets</p>
+        <p>Ouvre <strong>ChatGPT</strong> (ou Claude), colle le texte, puis remplace tout ce qui est entre <strong>[crochets]</strong> par tes informations. Garde <strong>une seule</strong> façon d'être payé (à l'heure ou au forfait) et <strong>un seul</strong> moyen de paiement (virement, PayPal, Wise…). Envoie.</p>
       </div></li>
       <li><span class="num">3</span><div>
+        <p class="howto-title">Vérifie et télécharge le PDF</p>
+        <p>Relis ton nom, le total et ton moyen de paiement. Si tout est juste, télécharge le PDF. Le mois suivant, tu recommences avec le numéro de facture suivant.</p>
+      </div></li>
+      <li><span class="num">4</span><div>
         <p class="howto-title">Où l'envoyer</p>
         <p>À préciser : le canal d'envoi te sera indiqué ici.</p>
       </div></li>
@@ -555,6 +624,22 @@
       })();
     }
   }
+
+  document.querySelectorAll('button.btn-copy').forEach(b => {
+    b.addEventListener('click', async () => {
+      const text = document.getElementById(b.dataset.copy).textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (e) {
+        // Repli pour les navigateurs sans accès au presse-papiers
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); ta.remove();
+      }
+      b.textContent = 'Copié ✓ Colle-le dans ChatGPT';
+      setTimeout(() => { b.textContent = 'Copier le texte'; }, 2500);
+    });
+  });
 
   render();
 </script>
