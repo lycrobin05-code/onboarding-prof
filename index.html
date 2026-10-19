@@ -82,7 +82,7 @@
     border-radius: var(--radius); overflow: hidden;
     border: 1px solid rgba(201, 169, 126, .2); background: #000;
   }
-  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video iframe, .video video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .video-note { font-size: 13px; color: rgba(250, 246, 238, .5); text-align: center; margin-top: 10px; }
 
   .substep {
@@ -375,6 +375,11 @@
       <h3>Envoie ta facture chaque fin de mois :</h3>
     </div>
     <p class="step-intro">Chaque fin de mois, tu envoies une facture pour le mois écoulé. Elle est réglée sous 15 jours. Tu n'as pas besoin de SIRET ni de logiciel : tu la fais en 2 minutes avec ChatGPT (ou Claude), grâce au texte ci-dessous.</p>
+    <div class="video">
+      <video src="video/facture-chatgpt.mp4" poster="video/facture-chatgpt.jpg" controls playsinline preload="none" title="Comment créer sa facture avec ChatGPT"></video>
+    </div>
+    <p class="video-note">Regarde la vidéo (4 min 35), puis suis les étapes ci-dessous.</p>
+    <div style="height:28px"></div>
     <ol class="howto">
       <li><span class="num">1</span><div>
         <p class="howto-title">Copie le texte de la facture</p>
@@ -423,10 +428,6 @@ Donne-moi ensuite le lien de téléchargement du PDF, nommé : Facture_[mon nom]
         </div>
       </div></li>
       <li><span class="num">2</span><div>
-        <p class="howto-title">Colle-le dans ChatGPT et réponds à ses questions</p>
-        <p>Ouvre <strong>ChatGPT</strong> (ou Claude), colle le texte et envoie. ChatGPT te donne la liste des informations à fournir, avec un modèle : copie le modèle, remplis-le et renvoie-le. Il crée ensuite ta facture.</p>
-      </div></li>
-      <li><span class="num">3</span><div>
         <p class="howto-title">Vérifie et télécharge le PDF</p>
         <p>Relis ton nom, le total et ton moyen de paiement. Si tout est juste, télécharge le PDF. Le mois suivant, tu recommences avec le numéro de facture suivant (1, puis 2, puis 3…).</p>
       </div></li>
