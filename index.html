@@ -380,66 +380,59 @@
         <p class="howto-title">Copie le texte de la facture</p>
         <p>Clique sur le bouton <strong>Copier le texte</strong>. Les coordonnées de Thomas sont déjà dedans.</p>
         <div class="prompt-box">
-          <pre id="prompt-facture">Tu es mon assistant de facturation. Crée-moi une facture professionnelle au format PDF, prête à télécharger, en français, mise en page sobre (une seule page A4).
+          <pre id="prompt-facture">Tu es mon assistant de facturation. Je suis professeur d'arabe coranique en ligne et je dois faire ma facture du mois pour Thomas Saint-Louis.
 
-Remplis la facture UNIQUEMENT avec les informations ci-dessous. N'invente rien. S'il manque une information, pose-moi la question avant de générer le PDF.
+ÉTAPE 1 — Pose-moi les questions
+Ne crée pas encore la facture. Commence par me lister les informations dont tu as besoin, en phrases simples. Puis, juste en dessous, écris : "Tu peux me répondre en copiant ce modèle et en le remplissant :" et donne-moi ce modèle dans un bloc de texte à copier :
 
-=== MES INFORMATIONS (le prestataire) — À REMPLIR ===
-Nom et prénom : [TON NOM COMPLET]
-Adresse complète : [TON ADRESSE, VILLE, CODE POSTAL]
-Pays : [TON PAYS]
-Numéro d'entreprise (ICE au Maroc, NIF en Algérie, matricule fiscal en Tunisie) : [TON NUMÉRO — si tu n'en as pas, écris "aucun"]
+Nom et prénom :
+Adresse complète (rue, ville, code postal) :
+Pays :
+Numéro d'entreprise (ICE au Maroc, NIF en Algérie, matricule fiscal en Tunisie — si tu n'en as pas, écris "aucun") :
 
-=== LE CLIENT (ne pas modifier) ===
-Thomas Saint-Louis — À la lumière du Coran
-246 avenue de Fronton
-31200 Toulouse, France
-SIRET : 847 639 077 00035
+Numéro de facture (1 pour ta première facture, puis 2, 3, 4… sans sauter de numéro) :
+Date de la facture (le jour où tu la fais) :
+Mois facturé :
 
-=== LA FACTURE — À REMPLIR ===
-Numéro de facture : [ex : 2026-10-01 → année-mois-numéro]
-Date de la facture : [JJ/MM/AAAA]
-Mois facturé : [ex : octobre 2026]
+Comment tu es payé : à l'heure OU au forfait
+Si à l'heure → Nombre d'heures : / Tarif horaire en € : / Détail des cours (facultatif) :
+Si au forfait → Montant du forfait en € :
 
-=== MA RÉMUNÉRATION — À REMPLIR (garde UNE seule option, supprime l'autre) ===
-Option A — Payé à l'heure :
-  Nombre d'heures de cours réalisées : [NOMBRE]
-  Tarif horaire : [MONTANT] €
-  Détail des cours (facultatif) : [ex : 12/10 – Karim – 1 h ; 14/10 – Sarah – 1 h ... ou laisse vide]
-Option B — Payé au forfait mensuel :
-  Montant du forfait : [MONTANT] €
+Moyen de paiement : Virement / PayPal / Wise / Autre
+Informations de paiement (IBAN ou RIB + BIC, ou email PayPal, ou email Wise…) :
 
-=== COMMENT JE VEUX ÊTRE PAYÉ — À REMPLIR (garde UNE seule option, supprime les autres) ===
-Virement bancaire → Titulaire : [NOM] / Banque : [BANQUE] / IBAN ou RIB : [NUMÉRO] / BIC-SWIFT : [CODE]
-PayPal → Email PayPal : [EMAIL]
-Wise → Email ou identifiant Wise : [EMAIL OU @IDENTIFIANT]
-Autre → [NOM DU SERVICE + identifiant]
+ÉTAPE 2 — Vérifie
+Quand j'ai répondu, vérifie qu'il ne manque rien. S'il manque une information obligatoire, redemande-la. N'invente jamais une information.
 
-=== RÈGLES DE LA FACTURE ===
-- Titre : "FACTURE" + le numéro de facture.
-- En haut à gauche : mes informations. En haut à droite : le client.
-- Si j'ai écrit "aucun" pour le numéro d'entreprise, n'affiche pas cette ligne sur la facture.
-- Intitulé de la ligne : "Cours d'arabe coranique en ligne — [mois facturé]".
-- Si option A : tableau Désignation | Quantité (heures) | Prix unitaire | Total. Total = heures × tarif horaire. Si j'ai donné le détail des cours, ajoute un second tableau dessous (Date | Élève | Durée).
-- Si option B : tableau Désignation | Forfait mensuel | Total.
-- Vérifie le calcul deux fois.
-- Montants en euros, avec 2 décimales (ex : 156,00 €).
-- Ajoute la mention : "TVA non applicable — prestataire établi hors de France."
-- Ajoute un encadré "Moyen de paiement" avec uniquement le moyen que j'ai choisi et ses informations.
-- Ajoute : "Paiement à réception de la facture, selon les conditions prévues au contrat."
-- Pas de logo, pas de couleurs vives, pas d'emoji.
+ÉTAPE 3 — Crée la facture en PDF
+Une seule page A4, en français, mise en page sobre, sans logo, sans couleurs vives, sans emoji.
+- Titre : "FACTURE N° [numéro]" et la date.
+- En haut à gauche : mes informations. Si j'ai écrit "aucun" pour le numéro d'entreprise, n'affiche pas cette ligne.
+- En haut à droite, le client (ne pas modifier) :
+  Thomas Saint-Louis — À la lumière du Coran
+  246 avenue de Fronton, 31200 Toulouse, France
+  SIRET : 847 639 077 00035
+- Intitulé : "Cours d'arabe coranique en ligne — [mois facturé]".
+- Si payé à l'heure : tableau Désignation | Quantité (heures) | Prix unitaire | Total. Total = heures × tarif horaire. Si j'ai donné le détail des cours, ajoute un second tableau dessous (Date | Élève | Durée).
+- Si payé au forfait : tableau Désignation | Forfait mensuel | Total.
+- Vérifie le calcul deux fois. Montants en euros, avec 2 décimales (ex : 156,00 €).
+- Encadré "Moyen de paiement" avec uniquement le moyen que j'ai choisi et ses informations.
+- Mentions en bas de page :
+  "TVA non applicable — prestataire établi hors de France."
+  "Paiement à réception de la facture, selon les conditions prévues au contrat."
+  "Le prestataire est seul responsable de ses déclarations et de ses obligations fiscales et sociales dans son pays de résidence."
 
-Une fois le PDF généré, donne-moi le lien de téléchargement. Nomme le fichier : Facture_[mon nom]_[mois facturé].pdf</pre>
+Donne-moi ensuite le lien de téléchargement du PDF, nommé : Facture_[mon nom]_[mois facturé].pdf</pre>
           <button class="btn-copy" type="button" data-copy="prompt-facture">Copier le texte</button>
         </div>
       </div></li>
       <li><span class="num">2</span><div>
-        <p class="howto-title">Colle-le dans ChatGPT et remplis les crochets</p>
-        <p>Ouvre <strong>ChatGPT</strong> (ou Claude), colle le texte, puis remplace tout ce qui est entre <strong>[crochets]</strong> par tes informations. Garde <strong>une seule</strong> façon d'être payé (à l'heure ou au forfait) et <strong>un seul</strong> moyen de paiement (virement, PayPal, Wise…). Envoie.</p>
+        <p class="howto-title">Colle-le dans ChatGPT et réponds à ses questions</p>
+        <p>Ouvre <strong>ChatGPT</strong> (ou Claude), colle le texte et envoie. ChatGPT te donne la liste des informations à fournir, avec un modèle : copie le modèle, remplis-le et renvoie-le. Il crée ensuite ta facture.</p>
       </div></li>
       <li><span class="num">3</span><div>
         <p class="howto-title">Vérifie et télécharge le PDF</p>
-        <p>Relis ton nom, le total et ton moyen de paiement. Si tout est juste, télécharge le PDF. Le mois suivant, tu recommences avec le numéro de facture suivant.</p>
+        <p>Relis ton nom, le total et ton moyen de paiement. Si tout est juste, télécharge le PDF. Le mois suivant, tu recommences avec le numéro de facture suivant (1, puis 2, puis 3…).</p>
       </div></li>
     </ol>
     <button class="check" type="button" data-step="6" aria-pressed="false">
