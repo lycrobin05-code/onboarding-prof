@@ -126,6 +126,10 @@
   .btn-outline.is-soon { opacity: .55; cursor: default; }
   .btn-outline:hover { background: rgba(201, 169, 126, .08); }
 
+  figure { margin: 12px 0 0; }
+  figure img { display: block; width: 100%; max-width: 720px; border-radius: 12px; border: 1px solid rgba(201, 169, 126, .3); background: #fff; }
+  figcaption { font-size: 13px; color: rgba(250, 246, 238, .6); margin-top: 6px; }
+  h4.part { color: var(--accent-200); font-size: 1rem; font-weight: 700; margin: 28px 0 10px; text-align: center; }
   .todo {
     border: 1px dashed rgba(201, 169, 126, .35); border-radius: var(--radius);
     padding: 40px 20px; text-align: center; color: rgba(250, 246, 238, .5); font-size: 14px;
@@ -171,7 +175,7 @@
     <p>Cette page te prépare à donner tes premiers cours. Suis les étapes dans l'ordre et coche chacune quand elle est terminée.</p>
     <div class="progress">
       <div class="progress-bar"><div class="progress-fill" id="fill"></div></div>
-      <p class="progress-label" id="progress-label">Étape 1 terminée. Tu es à l'étape 2 sur 6.</p>
+      <p class="progress-label" id="progress-label">Étape 1 terminée. Tu es à l'étape 2 sur 7.</p>
     </div>
   </div>
 </section>
@@ -186,6 +190,7 @@
       <li data-step="4"><a href="#etape-4"><span class="num">4</span><span class="label">Étape 4<span class="sub">Ouvre ton Espace prof (suivi de tes élèves)</span></span></a></li>
       <li data-step="5"><a href="#etape-5"><span class="num">5</span><span class="label">Étape 5<span class="sub">Bloque tes heures de prière dans ton agenda</span></span></a></li>
       <li data-step="6"><a href="#etape-6"><span class="num">6</span><span class="label">Étape 6<span class="sub">Envoie ta facture chaque fin de mois</span></span></a></li>
+      <li data-step="7"><a href="#etape-7"><span class="num">7</span><span class="label">Étape 7<span class="sub">Le tuto en images, pas à pas (agenda, Fathom, ton espace)</span></span></a></li>
     </ol>
   </div>
 </section>
@@ -196,7 +201,7 @@
       <span class="step-tag">Étape 1</span>
       <h3>Ton recrutement est validé</h3>
     </div>
-    <p class="step-intro">C'est fait. Tu fais maintenant partie de l'équipe de professeurs. Il te reste 5 étapes avant ton premier cours.</p>
+    <p class="step-intro">C'est fait. Tu fais maintenant partie de l'équipe de professeurs. Il te reste 6 étapes avant ton premier cours.</p>
     <div class="check is-done" aria-hidden="true">
       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path class="tick" d="m8 12 3 3 5-6"/></svg>
       Étape 1 terminée
@@ -379,6 +384,122 @@
   </div>
 </section>
 
+<section class="step" id="etape-7">
+  <div class="wrap">
+    <div class="step-head">
+      <span class="step-tag">Étape 7</span>
+      <h3>Le tuto en images, pas à pas :</h3>
+    </div>
+    <p class="step-intro">Tout ce qu'il faut cliquer, dans l'ordre, avec une image à chaque fois. Les ronds rouges numérotés montrent où cliquer. Tu fais ça une seule fois, sur un ordinateur. Compte 15 minutes.</p>
+    <ol class="howto">
+      <li><span class="num">1</span><div>
+        <p class="howto-title">Ouvre ton espace</p>
+        <p>Clique sur le lien que Robin t'a envoyé sur WhatsApp. En haut, clique sur <strong>Réglages</strong> (1).</p><figure><img src="img/01-espace-accueil.jpg" alt="" loading="lazy"><figcaption>Ton espace. Le bouton Réglages est entouré en rouge.</figcaption></figure>
+      </div></li>
+    </ol>
+    <h4 class="part">Partie A · Brancher ton agenda Google</h4>
+    <ol class="howto">
+      <li><span class="num">2</span><div>
+        <p class="howto-title">Copie l'adresse du robot</p>
+        <p>Dans Réglages, partie « 1. Ton agenda Google », clique sur <strong>COPIER</strong> (1). Laisse cette page ouverte, tu y reviens à l'étape 10.</p><figure><img src="img/02-espace-reglages-agenda.jpg" alt="" loading="lazy"><figcaption>(1) Copier l'adresse du robot. (2) et (3) servent à l'étape 10.</figcaption></figure>
+      </div></li>
+      <li><span class="num">3</span><div>
+        <p class="howto-title">Ouvre Google Agenda sur un ordinateur</p>
+        <p>Va sur <strong>calendar.google.com</strong>. À gauche, sous « Mes agendas », repère ton agenda : c'est la ligne avec ton nom (1).</p><figure><img src="img/04-gcal-accueil.jpg" alt="" loading="lazy"><figcaption>La ligne avec ton nom, sous « Mes agendas ».</figcaption></figure>
+      </div></li>
+      <li><span class="num">4</span><div>
+        <p class="howto-title">Fais apparaître les trois petits points</p>
+        <p>Passe la souris sur la ligne avec ton nom : trois petits points apparaissent à droite. Clique dessus (1).</p><figure><img src="img/05-gcal-hover-points.jpg" alt="" loading="lazy"><figcaption>Les trois points apparaissent quand la souris est sur la ligne.</figcaption></figure>
+      </div></li>
+      <li><span class="num">5</span><div>
+        <p class="howto-title">Ouvre les paramètres</p>
+        <p>Dans le menu, clique sur <strong>Paramètres et partage</strong> (1).</p><figure><img src="img/06-gcal-menu-parametres.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">6</span><div>
+        <p class="howto-title">Ajoute une personne</p>
+        <p>Descends jusqu'à <strong>Partagé avec</strong>. Clique sur <strong>+ Ajouter des personnes et des groupes</strong> (1). Quand tu auras fini, tu verras une ligne comme (2), avec le robot.</p><figure><img src="img/07-gcal-partage-section.jpg" alt="" loading="lazy"><figcaption>(1) le bouton à cliquer. (2) ce que tu dois obtenir à la fin.</figcaption></figure>
+      </div></li>
+      <li><span class="num">7</span><div>
+        <p class="howto-title">Colle l'adresse du robot</p>
+        <p>Dans la case (1), colle l'adresse copiée à l'étape 2 (clic droit › Coller, ou Ctrl+V sur Windows, Cmd+V sur Mac).</p><figure><img src="img/08-gcal-dialog-email.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">8</span><div>
+        <p class="howto-title">Choisis la bonne autorisation</p>
+        <p>Clique sur la liste « Autorisations » et choisis <strong>Voir les détails des événements</strong> (1). Pas une autre.</p><figure><img src="img/09-gcal-dialog-autorisations.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">9</span><div>
+        <p class="howto-title">Envoie</p>
+        <p>Clique sur <strong>Envoyer</strong> (1). Si Google demande une confirmation, confirme.</p><figure><img src="img/08b-gcal-dialog-envoyer.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">10</span><div>
+        <p class="howto-title">Dis-le à ton espace</p>
+        <p>Reviens dans ton espace › Réglages. Dans la case <strong>Ton adresse Google</strong> (2 sur l'image de l'étape 2), écris l'adresse Google de cet agenda. Clique sur <strong>Enregistrer et vérifier</strong> (3). Le voyant devient vert : « Agenda lu le… ». S'il reste rouge, le message te dit quoi corriger.</p>
+      </div></li>
+    </ol>
+    <h4 class="part">Partie B · Brancher Fathom</h4>
+    <ol class="howto">
+      <li><span class="num">11</span><div>
+        <p class="howto-title">Ouvre les réglages Fathom</p>
+        <p>Va sur <strong>fathom.video</strong> et clique sur <strong>Settings</strong> (la roue dentée, en haut à droite). Tout en haut, vérifie : <strong>Auto-record : All meetings</strong> (1) et <strong>auto-share : Summary &amp; recording</strong> (2). Si ce n'est pas ça, clique dessus et choisis-le.</p><figure><img src="img/10-fathom-settings-haut.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">12</span><div>
+        <p class="howto-title">Le modèle de résumé</p>
+        <p>Descends jusqu'à <strong>Default Meeting Summary Template</strong> et clique sur le bouton à droite (1).</p><figure><img src="img/16-fathom-template.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">13</span><div>
+        <p class="howto-title">Choisis « Enhanced »</p>
+        <p>Dans la liste, clique sur <strong>Enhanced</strong> (1). Les résumés de tes cours seront pédagogiques, pas commerciaux.</p><figure><img src="img/17-fathom-template-liste.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">14</span><div>
+        <p class="howto-title">API Access</p>
+        <p>Descends jusqu'à <strong>API Access</strong> et clique sur <strong>Add</strong> (1).</p><figure><img src="img/18-fathom-api-access.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">15</span><div>
+        <p class="howto-title">Crée une clé</p>
+        <p>Clique sur <strong>Generate Api Key</strong> (1). Donne-lui un nom, par exemple « espace prof », et valide. Tu n'as pas besoin de copier la clé.</p><figure><img src="img/19-fathom-add-api.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">16</span><div>
+        <p class="howto-title">Ouvre « Manage »</p>
+        <p>Reviens dans Settings › API Access. Sur la ligne de ta clé, clique sur <strong>Manage</strong> (1).</p><figure><img src="img/18b-fathom-manage.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">17</span><div>
+        <p class="howto-title">Ajoute un webhook</p>
+        <p>Clique sur <strong>Add Webhook</strong> (1).</p><figure><img src="img/14-fathom-manage.jpg" alt="" loading="lazy"><figcaption>Les cases grisées sont tes codes secrets : ne les partage pas.</figcaption></figure>
+      </div></li>
+      <li><span class="num">18</span><div>
+        <p class="howto-title">Copie ton adresse Fathom dans ton espace</p>
+        <p>Dans ton espace › Réglages, partie « 2. Fathom », clique sur <strong>COPIER</strong> (1).</p><figure><img src="img/03-espace-reglages-fathom.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">19</span><div>
+        <p class="howto-title">Remplis le webhook</p>
+        <p>Dans Fathom : colle l'adresse dans <strong>Destination URL</strong> (1). Vérifie que <strong>My Recordings</strong> (2) et <strong>Summary</strong> (3) sont activés (bleu, avec une coche). Clique sur <strong>Create Webhook</strong> (4).</p><figure><img src="img/15-fathom-setup-webhook.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+    </ol>
+    <h4 class="part">Partie C · Mettre un cours dans ton agenda</h4>
+    <ol class="howto">
+      <li><span class="num">20</span><div>
+        <p class="howto-title">Crée un événement</p>
+        <p>Dans Google Agenda, clique sur <strong>Créer</strong> (1) puis <strong>Événement</strong> (2). Pour un cours réservé via Calendly, tu n'as rien à faire : il arrive tout seul dans l'agenda, déjà bien rempli.</p><figure><img src="img/20-gcal-creer-menu.jpg" alt="" loading="lazy"><figcaption></figcaption></figure>
+      </div></li>
+      <li><span class="num">21</span><div>
+        <p class="howto-title">La règle unique : l'élève en invité + Google Meet</p>
+        <p>Écris un titre (1). Dans <strong>Ajouter des invités</strong> (2), tape l'email de ton élève (celui de sa fiche dans ton espace). Clique sur <strong>Ajouter une visioconférence Google Meet</strong> (3). Clique sur <strong>Enregistrer</strong> (4). Pour un cours fixe chaque semaine : avant d'enregistrer, clique « Autres options », puis « Ne se répète pas » › « Toutes les semaines ».</p><figure><img src="img/22-gcal-event-draft.jpg" alt="" loading="lazy"><figcaption>Sans l'élève en invité ou sans Google Meet, le cours n'est pas reconnu.</figcaption></figure>
+      </div></li>
+    </ol>
+    <h4 class="part">Partie D · Le test</h4>
+    <ol class="howto">
+      <li><span class="num">22</span><div>
+        <p class="howto-title">Un cours test de 5 minutes</p>
+        <p>Crée un cours comme à l'étape 21, qui commence dans 5 minutes, avec un ami ou une autre adresse à toi en invité. Rejoins le Meet, accepte le robot Fathom, parle 5 minutes (Fathom ne traite pas les réunions trop courtes), raccroche. Dix minutes plus tard, ouvre ton espace : le cours est marqué <strong>Fait</strong>, avec sa rediffusion et son résumé. Les deux voyants des Réglages sont verts. C'est terminé : tu n'auras plus jamais à refaire ça.</p>
+      </div></li>
+    </ol>
+    <button class="check" type="button" data-step="7" aria-pressed="false">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path class="tick" d="m8 12 3 3 5-6"/></svg>
+      Étape 7 terminée
+    </button>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">À la lumière du Coran · Espace professeurs</div>
 </footer>
@@ -386,7 +507,7 @@
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script>
   const KEY = 'onboarding-prof-steps';
-  const TOTAL = 6;
+  const TOTAL = 7;
   let done = [];
   try { done = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) {}
   // Étape 1 (recrutement validé) est toujours acquise : on ne démarre jamais à zéro
@@ -401,9 +522,9 @@
     });
     const n = done.length;
     document.getElementById('fill').style.width = (n / TOTAL * 100) + '%';
-    const next = ['1', '2', '3', '4', '5', '6'].find(s => !done.includes(s));
+    const next = ['1', '2', '3', '4', '5', '6', '7'].find(s => !done.includes(s));
     document.getElementById('progress-label').textContent =
-      n === TOTAL ? 'Tout est prêt. Les 6 étapes sont terminées.'
+      n === TOTAL ? 'Tout est prêt. Les 7 étapes sont terminées.'
                   : n + (n > 1 ? ' étapes terminées' : ' étape terminée') + '. Tu es à l\'étape ' + next + ' sur ' + TOTAL + '.';
   }
 
