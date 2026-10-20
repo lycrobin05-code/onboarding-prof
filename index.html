@@ -43,6 +43,13 @@
   h1 { color: var(--cream); font-size: 1.4rem; font-weight: 700; text-transform: uppercase; line-height: 1.25; margin: 12px 0 16px; }
   .hero p { max-width: 560px; margin: 0 auto; }
 
+  .order-warn {
+    max-width: 560px; margin: 20px auto 0; padding: 14px 18px; text-align: left;
+    border: 1px solid var(--accent); border-left-width: 4px; border-radius: 12px;
+    background: rgba(201, 169, 126, .1); color: var(--cream); font-size: 14px;
+  }
+  .order-warn strong { color: var(--accent-200); text-transform: uppercase; letter-spacing: .04em; }
+  .order-note { text-align: center; color: var(--accent-200); font-size: 14px; font-weight: 600; margin: -12px 0 20px; }
   .progress { max-width: 420px; margin: 32px auto 0; }
   .progress-bar { height: 6px; background: rgba(201, 169, 126, .15); border-radius: 999px; overflow: hidden; }
   .progress-fill { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
@@ -198,6 +205,7 @@
     <p class="kicker">Préparation professeur</p>
     <h1>Bienvenue dans l'équipe</h1>
     <p>Cette page te prépare à donner tes premiers cours. Suis les étapes dans l'ordre et coche chacune quand elle est terminée.</p>
+    <p class="order-warn"><strong>Attention :</strong> toutes les étapes doivent être faites dans l'ordre, de la 2 à la 8. Faites dans le désordre, elles ne fonctionnent pas (chaque étape a besoin de la précédente).</p>
     <div class="progress">
       <div class="progress-bar"><div class="progress-fill" id="fill"></div></div>
       <p class="progress-label" id="progress-label">Étape 1 terminée. Tu es à l'étape 2 sur 8.</p>
@@ -208,6 +216,7 @@
 <section class="plan">
   <div class="wrap">
     <h2>Comment ça se déroule</h2>
+    <p class="order-note">Dans l'ordre, une étape après l'autre. Pas de saut d'étape.</p>
     <ol>
       <li data-step="1"><a href="#etape-1"><span class="num">1</span><span class="label">Étape 1 · Terminée<span class="sub">Ton recrutement est validé</span></span></a></li>
       <li data-step="2"><a href="#etape-2"><span class="num">2</span><span class="label">Étape 2<span class="sub">Accède à la plateforme de cours (le programme que suivent tes élèves)</span></span></a></li>
@@ -255,15 +264,15 @@
     <ol class="howto">
       <li><span class="num">1</span><div>
         <p class="howto-title">Ouvre l'email reçu</p>
-        <p>Dans les minutes qui suivent, tu reçois un email de <strong>« À la lumière du Coran »</strong> avec ton accès. S'il n'est pas dans ta boîte de réception, regarde dans <strong>Spam</strong> et <strong>Promotions</strong>.</p>
+        <p>Dans la minute, tu reçois un email de <strong>contact@a-la-lumiere-du-coran.com</strong>, sujet <strong>« Important : Votre accès à la formation »</strong>. S'il n'est pas dans ta boîte de réception, regarde dans <strong>Spam</strong>, <strong>Promotions</strong> ou <strong>Notifications</strong>.</p>
       </div></li>
       <li><span class="num">2</span><div>
-        <p class="howto-title">Clique sur le lien de l'email et crée ton mot de passe</p>
-        <p>Note ce mot de passe quelque part. C'est avec cette adresse email et ce mot de passe que tu te connectes à chaque fois.</p>
+        <p class="howto-title">Clique sur « Cliquez ici pour vous connecter », puis crée ton mot de passe</p>
+        <p>Sur la page de connexion, clique sur <strong>« Mot de passe oublié ? »</strong>, entre ton email, et suis l'email reçu pour choisir ton mot de passe. Note-le quelque part : c'est avec ton email et ce mot de passe que tu te connectes à chaque fois.</p>
       </div></li>
       <li><span class="num">3</span><div>
         <p class="howto-title">Enregistre l'adresse de la plateforme</p>
-        <p>La plateforme est ici : <a class="link" href="https://www.a-la-lumiere-du-coran.com/arabe" target="_blank" rel="noopener">www.a-la-lumiere-du-coran.com/arabe</a>. Mets-la dans tes favoris. Parcours le programme une première fois pour savoir ce que tes élèves voient.</p>
+        <p>La plateforme est ici : <a class="link" href="https://www.a-la-lumiere-du-coran.com/school/course/arabe" target="_blank" rel="noopener">www.a-la-lumiere-du-coran.com/school/course/arabe</a>. Mets-la dans tes favoris. Parcours le programme une première fois pour savoir ce que tes élèves voient.</p>
       </div></li>
     </ol>
     <div class="substep">
