@@ -424,11 +424,12 @@
       </div></li>
       <li><span class="num">2</span><div>
         <p class="howto-title">Fais les 2 branchements, une seule fois</p>
-        <p>Dans ton espace, onglet <strong>Réglages</strong> : (1) partage ton agenda Google avec l'adresse du robot indiquée, et enregistre ton adresse Google ; (2) colle l'adresse donnée dans tes réglages Fathom (Settings › API Access › Add Webhook). Les deux voyants passent au vert.</p>
+        <p>Dans ton espace, onglet <strong>Réglages</strong> : (1) partage ton agenda Google avec l'adresse du robot indiquée, et enregistre ton adresse Google ; (2) colle l'adresse donnée dans tes réglages Fathom (Settings › API Access › Add Webhook), avec <strong>Summary</strong> et <strong>Transcript</strong> activés. Les deux voyants passent au vert.</p>
       </div></li>
       <li><span class="num">3</span><div>
         <p class="howto-title">La règle unique</p>
         <p>Chaque cours dans ton agenda a <strong>l'élève en invité</strong> (l'email de sa fiche) et <strong>un lien Google Meet</strong>. Les réservations Calendly le font déjà. C'est comme ça que l'élève est reconnu, que Fathom lui envoie sa rediffusion, et que ton cours est compté.</p>
+        <p><strong>Pendant le cours, dis à voix haute les devoirs et ce que vous ferez la prochaine fois.</strong> Après chaque cours, une note « Reprendre ici » s'écrit toute seule sur la fiche de l'élève à partir de ce qui a été dit : où vous vous êtes arrêtés, les devoirs donnés, ses difficultés. Ce qui n'est pas dit (écrit seulement dans le chat Meet) n'y sera pas.</p>
       </div></li>
       <li><span class="num">4</span><div>
         <p class="howto-title">Au quotidien</p>
@@ -636,7 +637,7 @@ Donne-moi ensuite le lien de téléchargement du PDF, nommé : Facture_[mon nom]
       </div></li>
       <li><span class="num">19</span><div>
         <p class="howto-title">Remplis le formulaire et clique sur « Create Webhook »</p>
-        <p>Reviens sur l'onglet Fathom, dans le formulaire « Setup Webhook ». Clique dans la case <strong>Destination URL</strong> (1) et colle l'adresse : clic droit › Coller, ou Ctrl+V sur Windows, Cmd+V sur Mac. Elle doit commencer par https://espace-prof. Regarde les interrupteurs : <strong>My Recordings</strong> (2) et <strong>Summary</strong> (3) doivent être bleus avec une coche. S'ils sont gris, clique dessus pour les passer en bleu. Enfin, clique sur le bouton bleu <strong>Create Webhook</strong> (4), tout en bas. Le formulaire se ferme et ton adresse apparaît dans la liste « Webhooks ». Fathom, c'est fini.</p><figure><img src="img/15-fathom-setup-webhook.jpg" alt="" loading="lazy"></figure>
+        <p>Reviens sur l'onglet Fathom, dans le formulaire « Setup Webhook ». Clique dans la case <strong>Destination URL</strong> (1) et colle l'adresse : clic droit › Coller, ou Ctrl+V sur Windows, Cmd+V sur Mac. Elle doit commencer par https://espace-prof. Regarde les interrupteurs : <strong>My Recordings</strong> (2), <strong>Summary</strong> (3) et <strong>Transcript</strong> doivent être bleus avec une coche. S'ils sont gris, clique dessus pour les passer en bleu. Le Transcript est indispensable : c'est lui qui sert à écrire, après chaque cours, la note « Reprendre ici » de ton élève (où vous en êtes, devoirs donnés, difficultés). Enfin, clique sur le bouton bleu <strong>Create Webhook</strong> (4), tout en bas. Le formulaire se ferme et ton adresse apparaît dans la liste « Webhooks ». Fathom, c'est fini.</p><figure><img src="img/15-fathom-setup-webhook.jpg" alt="" loading="lazy"></figure>
       </div></li>
     </ol>
     <h4 class="part">Partie C · Mettre un cours dans ton agenda (points 20 et 21)</h4>
@@ -654,7 +655,7 @@ Donne-moi ensuite le lien de téléchargement du PDF, nommé : Facture_[mon nom]
     <ol class="howto">
       <li><span class="num">22</span><div>
         <p class="howto-title">Un cours test de 5 minutes, et c'est terminé</p>
-        <p>Crée un cours comme au point 21, qui commence dans 5 minutes, et invite un ami ou une autre adresse email à toi. À l'heure, ouvre l'événement dans ton agenda et clique sur <strong>Participer avec Google Meet</strong>. Une fenêtre demande si « Fathom Notetaker » peut entrer : clique sur <strong>Admettre</strong>. Parle pendant 5 minutes sans t'arrêter (lis un texte, n'importe quoi : Fathom ne traite pas les réunions trop courtes). Clique sur le téléphone rouge pour raccrocher. Attends 10 minutes, puis ouvre ton espace › Accueil : le cours est marqué <strong>Fait</strong>, avec « Rediffusion » et « Résumé automatique du cours ». Va dans Réglages : les deux ronds sont verts. C'est terminé pour toujours : à partir de maintenant, tes cours remontent tout seuls, tu n'as plus rien à brancher.</p>
+        <p>Crée un cours comme au point 21, qui commence dans 5 minutes, et invite un ami ou une autre adresse email à toi. À l'heure, ouvre l'événement dans ton agenda et clique sur <strong>Participer avec Google Meet</strong>. Une fenêtre demande si « Fathom Notetaker » peut entrer : clique sur <strong>Admettre</strong>. Parle pendant 5 minutes sans t'arrêter (lis un texte, n'importe quoi : Fathom ne traite pas les réunions trop courtes). Clique sur le téléphone rouge pour raccrocher. Attends 10 minutes, puis ouvre ton espace › Accueil : le cours est marqué <strong>Fait</strong>, avec « Rediffusion », la note « Reprendre ici » et « Résumé automatique du cours ». Va dans Réglages : les deux ronds sont verts. C'est terminé pour toujours : à partir de maintenant, tes cours remontent tout seuls, tu n'as plus rien à brancher.</p>
       </div></li>
     </ol>
     <button class="check" type="button" data-step="9" aria-pressed="false">
